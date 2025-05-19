@@ -81,14 +81,12 @@ export default function ContentList({
             opacity: 1,
           });
           gsap.to(revealRef.current, {
-            // This might be redundant if opacity is set above
             visibility: "visible",
             ease: "power3.out",
             duration: 0.4,
           });
         }
         lastMousePos.current = mousePos;
-        // return () => ctx.revert(); // This cleanup should be in the outer useEffect cleanup
       }, component);
     };
 
@@ -135,8 +133,6 @@ export default function ContentList({
         onMouseLeave={onMouseLeave}
       >
         {items.map((item, index) => (
-          // Use item.id as the key if available and unique, it's more stable than index.
-          // Prismic documents (BlogPostDocument, ProjectDocument) have a unique 'id'.
           <React.Fragment key={item.id}>
             {isFilled.keyText(item.data.title) && (
               <li
