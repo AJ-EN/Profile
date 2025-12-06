@@ -97,7 +97,7 @@ function Geometry({ r, position, geometry, materials, soundEffects }) {
         return gsap.utils.random(materials);
     }
 
-    function handelClick(e) {
+    function handleClick(e) {
         const mesh = e.object;
 
         try {
@@ -105,7 +105,7 @@ function Geometry({ r, position, geometry, materials, soundEffects }) {
         } catch (error) {
             console.error("Error playing audio:", error);
         }
-        
+
         gsap.to(mesh.rotation, {
             x: `+=${gsap.utils.random(0, 2)}`,
             y: `+=${gsap.utils.random(0, 2)}`,
@@ -119,10 +119,10 @@ function Geometry({ r, position, geometry, materials, soundEffects }) {
     }
 
 
-    const handelPointerOver = () => {
+    const handlePointerOver = () => {
         document.body.style.cursor = "pointer";
     };
-    const handelPointerOut = () => {
+    const handlePointerOut = () => {
         document.body.style.cursor = "default";
     };
 
@@ -147,9 +147,9 @@ function Geometry({ r, position, geometry, materials, soundEffects }) {
             <Float speed={5 * r} rotationIntensity={6 * r} floatIntensity={5 * r}>
                 <mesh
                     geometry={geometry}
-                    onClick={handelClick}
-                    onPointerOver={handelPointerOver}
-                    onPointerOut={handelPointerOut}
+                    onClick={handleClick}
+                    onPointerOver={handlePointerOver}
+                    onPointerOut={handlePointerOut}
                     visible={visible}
                     material={startingMaterial}>
 

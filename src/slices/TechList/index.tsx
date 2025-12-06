@@ -58,7 +58,7 @@ const TechList = ({ slice }: TechListProps): JSX.Element => {
       );
     }, component)
     return () => ctx.revert()
-  })
+  }, [])
 
 
 
